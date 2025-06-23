@@ -40,6 +40,9 @@ app.options('*', cors());
 
 // v1 api routes
 app.use('/v1', routes);
+app.use('/*', (req, res) => {
+  res.send('ok');
+});
 
 // send back a 404 error for any unknown api request
 app.use((req, res, next) => {
