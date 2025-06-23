@@ -10,6 +10,13 @@ const defaultRoutes = [
     path: '/auth',
     route: authRoute,
   },
+  // health check - available in all environments
+  {
+    path: '/check',
+    route: (req, res) => {
+      res.send('ok');
+    },
+  },
 ];
 
 const devRoutes = [
